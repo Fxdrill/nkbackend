@@ -248,7 +248,7 @@ app.post('/api/products', requireAuth, upload.single('image'), async (req, res) 
         
         if (useSupabase) {
             const { data, error } = await supabaseClient.from('products')
-                .insert([{ title, price: price || '', description: description || '', image: imageUrl, whatsapp_link: newProduct.whatsappLink, created_at: new Date().toISOString() }])
+                .insert([{ id: newProduct.id, title, price: price || '', description: description || '', image: imageUrl, whatsapp_link: newProduct.whatsappLink, created_at: new Date().toISOString() }])
                 .select().single();
             if (error) throw error;
             res.json({ success: true, product: data });
@@ -367,7 +367,7 @@ app.post('/api/courses', requireAuth, upload.single('image'), async (req, res) =
         
         if (useSupabase) {
             const { data, error } = await supabaseClient.from('courses')
-                .insert([{ title, date: newCourse.date, comments: newCourse.comments, description, content, image: imageUrl, created_at: new Date().toISOString() }])
+                .insert([{ id: newCourse.id, title, date: newCourse.date, comments: newCourse.comments, description, content, image: imageUrl, created_at: new Date().toISOString() }])
                 .select().single();
             if (error) throw error;
             res.json({ success: true, course: data });
