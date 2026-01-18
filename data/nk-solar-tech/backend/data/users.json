@@ -1,0 +1,9 @@
+[
+  {
+    "id": "user-001",
+    "username": "admin",
+    "password": "admin123",
+    "name": "Administrator",
+    "createdAt": "2025-12-28T10:00:00.000Z"
+  }
+]
