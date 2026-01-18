@@ -407,12 +407,13 @@ app.delete('/api/courses/:id', requireAuth, async (req, res) => {
 });
 
 // ========================================================================
-// PAGE ROUTES
+// PAGE ROUTES (Optional - for standalone backend, you can remove these)
 // ========================================================================
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
+// Remove or comment out the root route since this is just an API server
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'index.html'));
+// });
 
 app.get('/admin', (req, res) => {
     if (req.session && req.session.userId) {
