@@ -242,7 +242,7 @@ app.post('/api/products', requireAuth, upload.single('image'), async (req, res) 
             price: price || '',
             description: description || '',
             image: imageUrl,
-            whatsappLink: whatsappLink || `https://wa.me/233501234567?text=Hello%20NK%20Solar%2C%20I%20want%20to%20buy%20${encodeURIComponent(title)}`,
+            whatsappLink: whatsappLink || `https://wa.me/2349131240760?text=Hello%20NK%20Solar%2C%20I%20want%20to%20buy%20${encodeURIComponent(title)}`,
             createdAt: new Date().toISOString()
         };
         
